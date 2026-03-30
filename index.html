@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HidroRec | Monitoramento Urbano Inteligente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar" id="inicio">
+        <div class="container topbar__content">
+          <div class="brand">
+            <div class="brand__logo" aria-hidden="true">
+              <img src="logo.png" alt="" />
+            </div>
+            <div class="brand__text">
+              <span class="brand__kicker">Plataforma de monitoramento</span>
+              <h1>HidroRec</h1>
+              <p>Monitoramento Urbano Inteligente</p>
+            </div>
+          </div>
+
+          <div class="topbar__tools">
+            <div class="topbar__quick-stats" aria-label="Resumo operacional">
+              <article class="quick-stat">
+                <span>Estações</span>
+                <strong>24 online</strong>
+              </article>
+              <article class="quick-stat">
+                <span>Mobilidade</span>
+                <strong>4 rotas seguras</strong>
+              </article>
+            </div>
+
+            <button class="topbar__action" type="button" aria-label="Abrir painel rápido">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Zm0 10a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <nav class="navbar">
+        <div class="container navbar__content">
+          <div class="nav-tabs" aria-label="Seções principais">
+            <a class="nav-tab nav-tab--active" href="#inicio" aria-current="page">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 10.5 12 4l8 6.5V20a1 1 0 0 1-1 1h-4.5v-5h-5v5H5a1 1 0 0 1-1-1v-9.5Z" />
+              </svg>
+              <span>Início</span>
+            </a>
+            <a class="nav-tab" href="#status-cidade">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 18h3.5l3.5-7 3 5 2.5-4H20" />
+                <path d="M4 6h16M4 12h5" />
+              </svg>
+              <span>Previsões</span>
+            </a>
+            <a class="nav-tab" href="#pontos-atencao">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3 21 19H3L12 3Z" />
+                <path d="M12 9v4" />
+                <path d="M12 16h.01" />
+              </svg>
+              <span>Alertas</span>
+            </a>
+            <a class="nav-tab" href="#reporte-admin">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3a4 4 0 0 1 4 4v1.2a3 3 0 0 0 .879 2.121l.95.95A2 2 0 0 1 16.414 15H7.586a2 2 0 0 1-1.415-3.414l.95-.95A3 3 0 0 0 8 8.2V7a4 4 0 0 1 4-4Z" />
+                <path d="M10 18a2 2 0 1 0 4 0" />
+              </svg>
+              <span>Admin</span>
+            </a>
+          </div>
+
+          <aside class="system-status" aria-label="Status do sistema">
+            <div class="system-status__dot"></div>
+            <div>
+              <strong>Sistema Operacional</strong>
+              <span>Monitoramento ativo</span>
+            </div>
+          </aside>
+        </div>
+      </nav>
+
+      <div class="critical-alert">
+        <div class="container critical-alert__content">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M12 3 21 19H3L12 3Z" />
+            <path d="M12 9v4" />
+            <path d="M12 16h.01" />
+          </svg>
+          <p>2 alagamentos ativos detectados. Evite as áreas afetadas.</p>
+        </div>
+      </div>
+
+      <main class="main-content">
+        <div class="container layout-grid">
+          <section class="hero-panel card" id="status-cidade">
+            <div class="hero-panel__overlay"></div>
+            <div class="hero-panel__header">
+              <div>
+                <p class="eyebrow">Panorama em tempo real</p>
+                <div class="headline-row">
+                  <h2>Status da Cidade</h2>
+                  <span class="risk-pill risk-pill--danger">
+                    <span class="risk-pill__dot"></span>
+                    Risco Alto
+                  </span>
+                </div>
+              </div>
+              <a class="button button--primary" href="#status-cidade">Previsões</a>
+            </div>
+
+            <div class="hero-band">
+              <div>
+                <span class="hero-band__label">Última atualização</span>
+                <strong>Radar consolidado para Recife</strong>
+              </div>
+              <p>Pluviometria elevada, maré em alta e dois pontos com alagamento ativo.</p>
+            </div>
+
+            <div class="status-metrics">
+              <article class="status-metric status-metric--normal">
+                <strong>2</strong>
+                <span>Normal</span>
+                <small>Corredores urbanos sem impacto</small>
+              </article>
+              <article class="status-metric status-metric--warning">
+                <strong>2</strong>
+                <span>Atenção</span>
+                <small>Oscilação de nível e tráfego moderado</small>
+              </article>
+              <article class="status-metric status-metric--danger">
+                <strong>2</strong>
+                <span>Alagamento</span>
+                <small>Ocorrências ativas com risco operacional</small>
+              </article>
+            </div>
+
+            <div class="summary-cards">
+              <article class="summary-card">
+                <div class="summary-card__icon summary-card__icon--tide">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 14c1.2 0 1.8-.8 2.4-1.6.6.8 1.2 1.6 2.4 1.6s1.8-.8 2.4-1.6c.6.8 1.2 1.6 2.4 1.6s1.8-.8 2.4-1.6c.6.8 1.2 1.6 2.4 1.6" />
+                    <path d="M12 4v8" />
+                    <path d="m9.5 6.5 2.5-2.5 2.5 2.5" />
+                  </svg>
+                </div>
+                <div>
+                  <p>Maré Atual</p>
+                  <h3>Alta</h3>
+                  <span>2.3m • Próxima mudança: 14:35</span>
+                </div>
+              </article>
+
+              <article class="summary-card">
+                <div class="summary-card__icon summary-card__icon--rain">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M8 17 6.5 20" />
+                    <path d="M12 17 10.5 20" />
+                    <path d="M16 17 14.5 20" />
+                    <path d="M7 16a4 4 0 0 1-.26-8A5.5 5.5 0 0 1 17.3 7.3 3.5 3.5 0 1 1 18 16H7Z" />
+                  </svg>
+                </div>
+                <div>
+                  <p>Volume de Chuva</p>
+                  <h3>12mm/h</h3>
+                  <span>Moderada • Diminuição em 30min</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="map-section card">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Território monitorado</p>
+                <h2>Mapa de Monitoramento</h2>
+              </div>
+            </div>
+
+            <div class="map-mockup" aria-label="Mapa estilizado de monitoramento">
+              <div class="map-mockup__grid"></div>
+              <div class="map-mockup__roads"></div>
+              <div class="map-mockup__canal"></div>
+              <div class="map-mockup__district map-mockup__district--one"></div>
+              <div class="map-mockup__district map-mockup__district--two"></div>
+              <div class="map-mockup__district map-mockup__district--three"></div>
+              <div class="map-mockup__district map-mockup__district--four"></div>
+
+              <button class="map-marker map-marker--normal" style="top: 26%; left: 18%" aria-label="Ponto normal"></button>
+              <button class="map-marker map-marker--warning" style="top: 41%; left: 52%" aria-label="Ponto de atenção"></button>
+              <button class="map-marker map-marker--danger" style="top: 30%; left: 72%" aria-label="Ponto de alagamento"></button>
+              <button class="map-marker map-marker--danger" style="top: 63%; left: 36%" aria-label="Ponto de alagamento"></button>
+              <button class="map-marker map-marker--warning" style="top: 58%; left: 78%" aria-label="Ponto de atenção"></button>
+              <button class="map-marker map-marker--normal" style="top: 72%; left: 60%" aria-label="Ponto normal"></button>
+
+              <div class="map-hud">
+                <span class="map-hud__chip">Recife • Zona central</span>
+                <span class="map-hud__chip map-hud__chip--soft">Atualizado há 2 min</span>
+              </div>
+
+              <div class="map-legend">
+                <span><i class="legend-dot legend-dot--normal"></i>Normal</span>
+                <span><i class="legend-dot legend-dot--warning"></i>Atenção</span>
+                <span><i class="legend-dot legend-dot--danger"></i>Alagamento</span>
+              </div>
+
+              <button class="map-action" type="button" aria-label="Adicionar ponto">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5v14" />
+                  <path d="M5 12h14" />
+                </svg>
+              </button>
+            </div>
+          </section>
+
+          <section class="attention-section card" id="pontos-atencao">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Ocorrências críticas</p>
+                <h2>Pontos de Atenção</h2>
+              </div>
+            </div>
+
+            <div class="attention-list">
+              <article class="attention-item">
+                <div>
+                  <h3>Av. Caxangá, próximo ao Shopping RioMar</h3>
+                  <p>Nível: 35cm • 5 min atrás</p>
+                </div>
+                <span class="badge badge--danger">Alagamento</span>
+              </article>
+
+              <article class="attention-item">
+                <div>
+                  <h3>Av. Agamenon Magalhães, Espinheiro</h3>
+                  <p>Nível: 15cm • 12 min atrás</p>
+                </div>
+                <span class="badge badge--warning">Atenção</span>
+              </article>
+
+              <article class="attention-item">
+                <div>
+                  <h3>Rua da Aurora, Centro</h3>
+                  <p>Nível: 28cm • 8 min atrás</p>
+                </div>
+                <span class="badge badge--danger">Alagamento</span>
+              </article>
+
+              <article class="attention-item">
+                <div>
+                  <h3>Av. Norte, Casa Forte</h3>
+                  <p>Nível: 18cm • 4 min atrás</p>
+                </div>
+                <span class="badge badge--warning">Atenção</span>
+              </article>
+            </div>
+          </section>
+
+          <section class="report-section card" id="reporte-admin">
+            <div class="section-heading">
+              <div>
+                <p class="eyebrow">Colaboração cidadã</p>
+                <h2>Reporte Colaborativo</h2>
+              </div>
+            </div>
+
+            <form class="report-form">
+              <article class="location-card">
+                <div class="location-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 21s6-4.686 6-10a6 6 0 1 0-12 0c0 5.314 6 10 6 10Z" />
+                    <circle cx="12" cy="11" r="2.5" />
+                  </svg>
+                </div>
+                <div class="location-card__info">
+                  <span>Sua Localização</span>
+                  <h3>Av. Boa Viagem, 3200</h3>
+                  <div class="location-banner">Localização detectada automaticamente via GPS</div>
+                </div>
+              </article>
+
+              <div class="form-block">
+                <label class="form-label">Nível da Água</label>
+                <div class="level-grid" role="list">
+                  <button class="level-option level-option--active" type="button">Poças</button>
+                  <button class="level-option" type="button">Tornozelo</button>
+                  <button class="level-option" type="button">Joelho</button>
+                  <button class="level-option" type="button">Cintura</button>
+                  <button class="level-option" type="button">Peito</button>
+                </div>
+                <div class="progress-bar" aria-hidden="true">
+                  <span></span>
+                </div>
+              </div>
+
+              <div class="form-block">
+                <label class="form-label" for="photo">Foto (Opcional)</label>
+                <label class="upload-box" for="photo">
+                  <input id="photo" type="file" />
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 16V7" />
+                    <path d="m8.5 10.5 3.5-3.5 3.5 3.5" />
+                    <path d="M5 18h14" />
+                  </svg>
+                  <span>Adicionar Foto</span>
+                  <small>Formatos JPG ou PNG de até 10MB</small>
+                </label>
+              </div>
+
+              <div class="form-block">
+                <label class="form-label" for="comment">Comentário Adicional</label>
+                <textarea
+                  id="comment"
+                  placeholder="Descreva o que você está observando no local..."
+                ></textarea>
+              </div>
+
+              <button class="button button--success button--block" type="submit">Enviar Reporte</button>
+
+              <article class="safety-card">
+                <div class="safety-card__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M12 3 19 6v5c0 5-3.5 8.5-7 10-3.5-1.5-7-5-7-10V6l7-3Z" />
+                    <path d="M9.5 12.5 11 14l3.5-4" />
+                  </svg>
+                </div>
+                <div>
+                  <h3>Dica de Segurança</h3>
+                  <p>
+                    Mantenha-se em local seguro ao fazer o reporte. Não se arrisque para obter informações.
+                  </p>
+                </div>
+              </article>
+            </form>
+          </section>
+
+          <aside class="user-status card">
+            <div>
+              <p class="eyebrow eyebrow--light">Seu Status</p>
+              <h2>Colaborador Urbano</h2>
+              <span>156 pontos • 12 reportes</span>
+            </div>
+            <div class="user-status__badge">
+              <div class="medal-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <circle cx="12" cy="9" r="4.5" />
+                  <path d="M9 13.5 7 21l5-2 5 2-2-7.5" />
+                </svg>
+              </div>
+              <strong>Nível 3</strong>
+            </div>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="container footer__content">
+          <div class="footer-brand">
+            <div class="footer-brand__mark" aria-hidden="true">
+              <img src="logo.png" alt="" />
+            </div>
+            <div>
+              <h2>HidroRec</h2>
+              <p>Plataforma de monitoramento urbano inteligente para prevenção, resposta e mobilidade segura em Recife.</p>
+            </div>
+          </div>
+          <span>© 2026 HidroRec. Todos os direitos reservados.</span>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
